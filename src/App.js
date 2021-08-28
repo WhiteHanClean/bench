@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
+import MainLayout from "./components/MainLayout";
+import "./index.css";
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
+    <body>
+      <MainLayout />
+    </body>
   );
 };
 
