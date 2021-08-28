@@ -1,0 +1,57 @@
+.navbar__item {
+  height: 104px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.checked {
+  width: 35px;
+}
+
+.toggle {
+  width: 35px;
+  display: flex;
+  margin-right: 34px;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: 70px;
+}
+
+.nav__text {
+  width: 210px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.call_btn {
+  display: flex;
+  align-items: center;
+  margin-right: 29px;
+}
+
+.call {
+  margin-right: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  .nav__text {
+    display: none;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+}

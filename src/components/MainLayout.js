@@ -1,13 +1,16 @@
-import React from 'react';
-import Service from './service/Service';
+import React from "react";
+import Intro from "./intro/Intro";
+import Navbar from "./Navbar/Navbar";
+import Service from "./service/Service";
 
-const MainLayout = () => {
-    return (
-        <div>
-            
-            <Service/>
-        </div>
-    );
-};
+function MainLayout() {
+  return (
+    <>
+      <Navbar />
+      <Intro />
+      <Service />
+    </>
+  );
+}
 
 export default MainLayout;
