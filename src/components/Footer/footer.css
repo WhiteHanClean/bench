@@ -1,0 +1,175 @@
+.footer {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15px;
+}
+
+.footer__social {
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.footer__social__text p {
+  width: 255px;
+  height: 72px;
+  color: #d9dbe1;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer__social__links {
+  margin-top: 24px;
+  display: flex;
+  width: 144px;
+  height: 24px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.footer_hiring span {
+  font-family: Nanum Pen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+li {
+  list-style: none;
+  color: #d9dbe1;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.footer__quick {
+  width: 255px;
+  height: 222px;
+}
+
+.footer__quick h5 {
+  cursor: pointer;
+
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.footer_hiring {
+  display: flex;
+}
+
+.footer_hiring span {
+  color: #852d31;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.footer__services {
+  width: 255px;
+  height: 222px;
+}
+
+.footer__services h5 {
+  color: white;
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.footer__reachUs {
+  width: 255px;
+  height: 198px;
+}
+
+.footer__reachUs h5 {
+  cursor: pointer;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.footer__message {
+  display: flex;
+}
+
+.footer__message p {
+  color: #d9dbe1;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.footer_end_p {
+  margin-top: 97.2px !important;
+  color: #d9dbe1;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 15px;
+}
+
+.layer {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.miniLogo {
+  cursor: pointer;
+}
+
+.miniLogo2 {
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 910px) {
+  .footer__quick {
+    display: none;
+  }
+
+  .footer__services {
+    display: none;
+  }
+
+  .miniLogo {
+    display: none;
+  }
+
+  .miniLogo2 {
+    display: block;
+  }
+
+  .footer__reachUs h5 {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .footer_end_p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 62px;
+  }
+}
