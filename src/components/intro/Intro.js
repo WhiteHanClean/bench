@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./intro.css";
 import layer5 from "../../assets/layer5.svg";
 import layer7 from "../../assets/Layer 7.svg";
 import layer6 from "../../assets/Layer 6.svg";
 import layer8 from "../../assets/layer 8.svg";
-
+import axios from 'axios'
 export default function Intro() {
+
+  const [appState, setAppState] = useState();
+  
+  useEffect(() => {
+    const apiUrl = 'http://35.198.122.64/api/v1/main/studio-language/';
+    axios.get(apiUrl).then((resp) => {
+      const allPersons = resp.data;
+      setAppState(allPersons);
+    });
+  }, [setAppState]);
+
+
   return (
     <div className="bench">
       <div className="layer_block_main">

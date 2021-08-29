@@ -1,7 +1,6 @@
 import React from "react";
 import "./partners.css";
 import Grid from "@material-ui/core/Grid";
-
 import Airbnb from "../../assets/Airbnb.svg";
 import Google from "../../assets/Google.svg";
 import Book from "../../assets/Book.svg";
@@ -25,21 +24,7 @@ const Partners = () => {
           </div>
         </div>
         <div className="section__blocks">
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-start"
-          >
-            <div className="section__block">
-              <img src={Airbnb} />
-            </div>
-          </Grid>
+        
 
           <Grid
             item
