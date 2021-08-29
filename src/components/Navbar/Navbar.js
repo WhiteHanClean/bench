@@ -6,8 +6,9 @@ import Switch from "@material-ui/core/Switch";
 import "../Navbar/navbar.css";
 import logo from "../../assets/Logo.svg";
 import call from "../../assets/Call.svg";
-import { IconButton } from "@material-ui/core";
-import { Menu } from "@material-ui/icons";
+import { IconButton, Menu, MenuItem } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
 
 const IOSSwitch = withStyles((theme) => ({
   root: {
@@ -69,8 +70,18 @@ export default function Navbar() {
     checkedC: true,
   });
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+  };
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -94,9 +105,55 @@ export default function Navbar() {
           </div>
 
           <div className="burger-menu">
-            <IconButton>
-              <img src={Menu} alt="произошла ошибка" />
+            <IconButton
+              onClick={handleClick}
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+            >
+              <MenuIcon className="menu" />
             </IconButton>
+            <Menu
+              className="menu_item"
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>About</MenuItem>
+              <MenuItem onClick={handleClose}>Pricing</MenuItem>
+              <MenuItem onClick={handleClose}>Contact</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <div className="call_menu">
+                  <span>Call</span>
+                </div>
+              </MenuItem>
+              <MenuItem>
+                {" "}
+                <FormGroup className="switch_menu">
+                  <div>
+                    <FormControlLabel
+                      className="checked"
+                      control={
+                        <IOSSwitch
+                          checked={state.checkedB}
+                          onChange={handleChange}
+                          name="checkedB"
+                        />
+                      }
+                    />
+                  </div>
+                </FormGroup>
+              </MenuItem>
+              <MenuItem>
+                <IconButton>
+                  <Brightness3Icon
+                    style={{ color: "black" }}
+                    className="moon"
+                  />
+                </IconButton>
+              </MenuItem>
+            </Menu>
           </div>
 
           <div className="toggle">
@@ -108,6 +165,7 @@ export default function Navbar() {
                 <img src={call} />
               </div>
             </div>
+
             <FormGroup>
               <div>
                 <FormControlLabel
@@ -122,6 +180,11 @@ export default function Navbar() {
                 />
               </div>
             </FormGroup>
+            <div className="moon__cont">
+              <IconButton>
+                <Brightness3Icon className="moon" />
+              </IconButton>
+            </div>
           </div>
         </div>
       </div>

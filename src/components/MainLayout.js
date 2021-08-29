@@ -1,6 +1,9 @@
 import React from "react";
+import Footer from "./Footer/Footer";
 import Intro from "./intro/Intro";
 import Navbar from "./Navbar/Navbar";
+import Partners from "./Partners/Partners";
+import Portfolio from "./portfolio/Portfolio";
 import Service from "./service/Service";
 
 function MainLayout() {
@@ -9,6 +12,9 @@ function MainLayout() {
       <Navbar />
       <Intro />
       <Service />
+      <Portfolio />
+      <Partners />
+      <Footer />
     </>
   );
 }
