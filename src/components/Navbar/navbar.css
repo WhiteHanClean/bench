@@ -18,7 +18,7 @@
 
 .logo {
   cursor: pointer;
-  margin-right: 70px;
+  margin-right: 130px;
 }
 
 .nav__text {
@@ -42,8 +42,38 @@
   margin-right: 4px;
 }
 
-@media screen and (max-width: 600px) {
+.menu {
+  width: 35px !important;
+  height: 35px !important;
+  color: #ffffff;
+}
+
+.menu_item {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 670px) {
   .nav__text {
+    display: none;
+  }
+
+  .navbar__item {
+    margin: 0 5px;
+  }
+
+  .layer_img_1 {
+    display: none;
+  }
+
+  .layer_img_2 {
+    display: none;
+  }
+
+  .layer_img_3 {
+    display: none;
+  }
+
+  .layer_img_4 {
     display: none;
   }
 
