@@ -80,6 +80,41 @@
   right: 303px;
 }
 
+.layer_img_5 {
+  display: none;
+  position: absolute;
+}
+
+.layer_img_6 {
+  display: none;
+  position: absolute;
+}
+.layer_img_7 {
+  display: none;
+  position: absolute;
+}
+
+@media screen and (max-width: 670px) {
+  .layer_img_5 {
+    display: block;
+    top: 0;
+    right: 0;
+  }
+
+  .layer_img_6 {
+    display: block;
+    right: 21.22%;
+    left: 0;
+    top: 25%;
+  }
+
+  .layer_img_7 {
+    display: block;
+    left: 21.07%;
+    top: 56.5%;
+  }
+}
+
 @media screen and (max-width: 670px) {
   .section__item__text h1 {
     font-size: 69px;

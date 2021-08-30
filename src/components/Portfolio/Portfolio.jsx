@@ -29,7 +29,20 @@ export default function Portfolio() {
 
                 <SwiperSlide>
                     <div className="port_item">
-                        {/* <img className="port_img" src={port} /> */}
+                        <img className="port_img" src={port} />
+                        <h2 className="port_name">Alu.kg</h2>
+                        <p className="port_description">
+                            Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
+                            company. We developed a web application for customers and sellers and an admin panel
+                        </p>
+                        <button className="port_btn"> view </button>
+                    </div>
+
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    <div className="port_item">
+                        <img className="port_img" src={port} />
                         <h2 className="port_name">Alu.kg</h2>
                         <p className="port_description">
                             Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
@@ -41,7 +54,7 @@ export default function Portfolio() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="port_item">
-                        {/* <img className="port_img" src={port} /> */}
+                        <img className="port_img" src={port} />
                         <h2 className="port_name">Alu.kg</h2>
                         <p className="port_description">
                             Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
@@ -53,19 +66,7 @@ export default function Portfolio() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="port_item">
-                        {/* <img className="port_img" src={port} /> */}
-                        <h2 className="port_name">Alu.kg</h2>
-                        <p className="port_description">
-                            Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
-                            company. We developed a web application for customers and sellers and an admin panel
-                        </p>
-                        <button className="port_btn"> view </button>
-                    </div>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="port_item">
-                        {/* <img className="port_img" src={port} /> */}
+                        <img className="port_img" src={port} />
                         <h2 className="port_name">Alu.kg</h2>
                         <p className="port_description">
                             Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady

@@ -1,22 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect } from "react";
 import "./intro.css";
+
 import layer5 from "../../assets/layer5.svg";
 import layer7 from "../../assets/Layer 7.svg";
 import layer6 from "../../assets/Layer 6.svg";
 import layer8 from "../../assets/layer 8.svg";
-import axios from 'axios'
+
+import layer9 from "../../assets/Layer 9.svg";
+import layer10 from "../../assets/Layer 10.svg";
+import layer11 from "../../assets/Layer 11.svg";
+import axios from "axios";
+
 export default function Intro() {
+  const getIntro = async () => {
+    let data = await axios.get(
+      `http://35.198.122.64/api/v1/main/studio-intro/`
+    );
+    console.log(data);
+  };
 
-  const [appState, setAppState] = useState();
-  
   useEffect(() => {
-    const apiUrl = 'http://35.198.122.64/api/v1/main/studio-language/';
-    axios.get(apiUrl).then((resp) => {
-      const allPersons = resp.data;
-      setAppState(allPersons);
-    });
-  }, [setAppState]);
-
+    getIntro();
+  }, []);
 
   return (
     <div className="bench">
@@ -25,6 +30,10 @@ export default function Intro() {
         <img className="layer_img_2" src={layer6} alt="произошла ошибка" />
         <img className="layer_img_3" src={layer8} alt="произошла ошибка" />
         <img className="layer_img_4" src={layer5} alt="произошла ошибка" />
+
+        <img className="layer_img_5" src={layer9} alt="произошла ошибка" />
+        <img className="layer_img_6" src={layer10} alt="произошла ошибка" />
+        <img className="layer_img_7" src={layer11} alt="произошла ошибка" />
       </div>
 
       <div className="container">

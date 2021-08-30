@@ -13,7 +13,7 @@ import Amazon from "../../assets/Amazon.svg";
 
 const Partners = () => {
   return (
-    <div className="container">
+    // <div className="container">
       <div className="section">
         <div className="section__items">
           <div className="section__item_1">
@@ -24,12 +24,26 @@ const Partners = () => {
           </div>
         </div>
         <div className="section__blocks">
-        
-
           <Grid
+            className="grid1"
             item
             xs={12}
-            sm={6}
+            md={4}
+            lg={3}
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="flex-start"
+          >
+            <div className="section__block">
+              <img src={Airbnb} />
+            </div>
+          </Grid>
+
+          <Grid
+            className="grid1"
+            item
+            xs={12}
             md={4}
             lg={3}
             container
@@ -40,15 +54,15 @@ const Partners = () => {
             <div className="section__block">
               <img src={Google} />
             </div>
-            <div className="section__block">
+            <div className="section__block_book">
               <img src={Book} />
             </div>
           </Grid>
 
           <Grid
+            className="grid1"
             item
             xs={12}
-            sm={6}
             md={4}
             lg={3}
             direction="column"
@@ -69,9 +83,9 @@ const Partners = () => {
           </Grid>
 
           <Grid
+            className="grid1"
             item
             xs={12}
-            sm={6}
             md={4}
             lg={3}
             container
@@ -88,9 +102,9 @@ const Partners = () => {
           </Grid>
 
           <Grid
+            className="grid1"
             item
             xs={12}
-            sm={6}
             md={4}
             lg={3}
             container
@@ -103,7 +117,7 @@ const Partners = () => {
           </Grid>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

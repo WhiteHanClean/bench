@@ -8,6 +8,7 @@ import logo from "../../assets/Logo.svg";
 import call from "../../assets/Call.svg";
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
 
 const IOSSwitch = withStyles((theme) => ({
   root: {
@@ -144,6 +145,14 @@ export default function Navbar() {
                   </div>
                 </FormGroup>
               </MenuItem>
+              <MenuItem>
+                <IconButton>
+                  <Brightness3Icon
+                    style={{ color: "black" }}
+                    className="moon"
+                  />
+                </IconButton>
+              </MenuItem>
             </Menu>
           </div>
 
@@ -156,6 +165,7 @@ export default function Navbar() {
                 <img src={call} />
               </div>
             </div>
+
             <FormGroup>
               <div>
                 <FormControlLabel
@@ -170,6 +180,11 @@ export default function Navbar() {
                 />
               </div>
             </FormGroup>
+            <div className="moon__cont">
+              <IconButton>
+                <Brightness3Icon className="moon" />
+              </IconButton>
+            </div>
           </div>
         </div>
       </div>

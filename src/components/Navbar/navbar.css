@@ -52,6 +52,17 @@
   margin-top: 50px;
 }
 
+.moon__cont {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moon {
+  color: white;
+}
+
 @media screen and (max-width: 670px) {
   .nav__text {
     display: none;
@@ -78,6 +89,10 @@
   }
 
   .toggle {
+    display: none;
+  }
+
+  .moon__cont {
     display: none;
   }
 
