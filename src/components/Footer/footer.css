@@ -164,6 +164,7 @@ li {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    margin-left: 50px;
   }
 
   .footer_end_p {
@@ -171,5 +172,6 @@ li {
     justify-content: center;
     align-items: center;
     margin-bottom: 62px;
+    margin-left: 30px;
   }
 }
