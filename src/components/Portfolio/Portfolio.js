@@ -74,7 +74,9 @@ export default function Portfolio() {
               Kyrgyz Chocolady company. We developed a web application for
               customers and sellers and an admin panel
             </p>
-            <button className="port_btn"> view </button>
+            <div>
+              <button className="port_btn"> view </button>
+            </div>
           </div>
         </SwiperSlide>
         {/* <SwiperSlide> <img src={port} /></SwiperSlide>

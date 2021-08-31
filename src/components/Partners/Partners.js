@@ -13,7 +13,7 @@ import Amazon from "../../assets/Amazon.svg";
 
 const Partners = () => {
   return (
-    // <div className="container">
+    <div className="container">
       <div className="section">
         <div className="section__items">
           <div className="section__item_1">
@@ -117,7 +117,7 @@ const Partners = () => {
           </Grid>
         </div>
       </div>
-    // </div>
+    </div>
   );
 };
 
