@@ -1,13 +1,14 @@
 
-import React, { useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./portfolio.css";
 import SwiperCore, {
     EffectCoverflow, Pagination
 } from 'swiper';
 import port from '../../assets/port.png'
-import logo from '../../assets/logo.png'
+import axios from 'axios';
 
+// import logo from '../../assets/logo.png'
 // import "swiper/css";
 // import "swiper/css/effect-coverflow"
 // import "swiper/css/pagination"
@@ -17,6 +18,17 @@ SwiperCore.use([EffectCoverflow, Pagination]);
 
 export default function Portfolio() {
 
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        axios.get('http://35.198.122.64/api/v1/main/studio-portfolio/').then(res => {
+            console.log(res)
+            setPosts(res.data)
+        })
+            .catch(err => console.log(err))
+    }, [])
+
+    console.log(posts)
     return (
         <>
             <h2 className="port_intro_name">Portfolio</h2>
@@ -30,68 +42,26 @@ export default function Portfolio() {
                     "slideShadows": true
                 }} pagination={true} className="mySwiper" >
 
+                    {
+                        posts.map(post => {
 
-                    <SwiperSlide>
+                            return <SwiperSlide>
 
-                        <div className="port_item">
-                            <img className="port_img" src={port} />
-                            <h2 className="port_name">Alu.kg</h2>
-                            <p className="port_description">
-                                Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
-                                company. We developed a web application for customers and sellers and an admin panel
-                        </p>
-                            <div className="port_button_center">
-                                <button className="port_btn"> view </button>
-                            </div>
-                        </div>
+                                <div className="port_item">
+                                    <img className="port_img" src={post.image} />
+                                    <h2 className="port_name">{post.title}</h2>
+                                    <p className="port_description">
+                                        {post.description}
+                                    </p>
+                                    <div className="port_button_center">
+                                        <button className="port_btn"> view </button>
+                                    </div>
+                                </div>
 
-                    </SwiperSlide>
+                            </SwiperSlide>
 
-
-                    <SwiperSlide>
-                        <div className="port_item">
-                            <img className="port_img" src={port} />
-                            <h2 className="port_name">Alu.kg</h2>
-                            <p className="port_description">
-                                Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
-                                company. We developed a web application for customers and sellers and an admin panel
-                        </p>
-                            <div className="port_button_center">
-                                <button className="port_btn"> view </button>
-                            </div>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <div className="port_item">
-                            <img className="port_img" src={port} />
-                            <h2 className="port_name">Alu.kg</h2>
-                            <p className="port_description">
-                                Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
-                                company. We developed a web application for customers and sellers and an admin panel
-                        </p>
-                            <div className="port_button_center">
-                                <button className="port_btn"> view </button>
-                            </div>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <div className="port_item">
-                            <img className="port_img" src={port} />
-                            <h2 className="port_name">Alu.kg</h2>
-                            <p className="port_description">
-                                Online Marketplace, launched in 2020 in Bishkek. A product of the Kyrgyz Chocolady
-                                company. We developed a web application for customers and sellers and an admin panel
-                        </p>
-                            <div className="port_button_center">
-                                <button className="port_btn"> view </button>
-                            </div>
-                        </div>
-
-                    </SwiperSlide>
+                        })
+                    }
 
 
                 </Swiper>

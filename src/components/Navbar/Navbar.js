@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -9,6 +9,7 @@ import call from "../../assets/Call.svg";
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
+import axios from "axios";
 
 const IOSSwitch = withStyles((theme) => ({
   root: {
@@ -84,6 +85,17 @@ export default function Navbar( {theme, toogleTheme} ) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const getLanguage = () => {
+    const response = axios.get(
+      `http://35.198.122.64/api/v1/main/studio-language/`
+    );
+    console.log(response);
+  };
+
+  useEffect(() => {
+    getLanguage();
+  }, []);
 
   return (
     <div className="container">

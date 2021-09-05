@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./partners.css";
 import Grid from "@material-ui/core/Grid";
-import Airbnb from "../../assets/Airbnb.svg";
-import Google from "../../assets/Google.svg";
-import Book from "../../assets/Book.svg";
-import Microsoft from "../../assets/Microsoft.svg";
-import Fedex from "../../assets/FedEx.svg";
-import Walmart from "../../assets/Walmart.svg";
-import Oyo from "../../assets/Oyo.svg";
-import Ola from "../../assets/OLA.svg";
-import Amazon from "../../assets/Amazon.svg";
+// import Airbnb from "../../assets/Airbnb.svg";
+// import Google from "../../assets/Google.svg";
+// import Book from "../../assets/Book.svg";
+// import Microsoft from "../../assets/Microsoft.svg";
+// import Fedex from "../../assets/FedEx.svg";
+// import Walmart from "../../assets/Walmart.svg";
+// import Oyo from "../../assets/Oyo.svg";
+// import Ola from "../../assets/OLA.svg";
+// import Amazon from "../../assets/Amazon.svg";
+import SwiperCore, { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import axios from "axios";
+
+SwiperCore.use([Pagination]);
 
 const Partners = () => {
+  
+  const [slider, setSlide] = useState([])
+
+  useEffect(() => {
+      axios.get('http://35.198.122.64/api/v1/main/studio-partner/').then(res => {
+          console.log(res)
+          setSlide(res.data)
+      })
+          .catch(err => console.log(err))
+  }, [])
+
   return (
     <div className="container">
       <div className="section">
@@ -23,8 +39,19 @@ const Partners = () => {
             <p>We have been working with some Fortune 500 clients</p>
           </div>
         </div>
+        <div className="partners_swiper">
+          <Swiper grabCursor={true} className="mySwiper">
+           {slider.map(slide => {
+             return <SwiperSlide>
+             <img className="section__block" src={slide.logo} />
+           </SwiperSlide>
+           })}
+          </Swiper>
+            
+        </div>
         <div className="section__blocks">
-          <Grid
+          {slider.map(slide => {
+            return  <Grid
             className="grid1"
             item
             xs={12}
@@ -36,88 +63,13 @@ const Partners = () => {
             alignItems="flex-start"
           >
             <div className="section__block">
-              <img src={Airbnb} />
+              <img className="partners_image"src={slide.logo}/>
             </div>
           </Grid>
-
-          <Grid
-            className="grid1"
-            item
-            xs={12}
-            md={4}
-            lg={3}
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-start"
-          >
-            <div className="section__block">
-              <img src={Google} />
-            </div>
-            <div className="section__block_book">
-              <img src={Book} />
-            </div>
-          </Grid>
-
-          <Grid
-            className="grid1"
-            item
-            xs={12}
-            md={4}
-            lg={3}
-            direction="column"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <div className="section__block">
-              <img src={Microsoft} />
-            </div>
-
-            <div className="section__block">
-              <img src={Fedex} />
-            </div>
-
-            <div className="section__block">
-              <img src={Walmart} />
-            </div>
-          </Grid>
-
-          <Grid
-            className="grid1"
-            item
-            xs={12}
-            md={4}
-            lg={3}
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-start"
-          >
-            <div className="section__block">
-              <img src={Oyo} />
-            </div>
-            <div className="section__block">
-              <img src={Ola} />
-            </div>
-          </Grid>
-
-          <Grid
-            className="grid1"
-            item
-            xs={12}
-            md={4}
-            lg={3}
-            container
-            direction="column"
-            justifyContent="center"
-          >
-            <div className="section__block">
-              <img src={Amazon} />
-            </div>
-          </Grid>
+          })}
         </div>
       </div>
-     </div>
+    </div>
   );
 };
 

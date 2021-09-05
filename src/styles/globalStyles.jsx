@@ -45,9 +45,6 @@ export const GlobalStyles = createGlobalStyle`
   .section__item_2 p {
     color:${({ theme }) => theme.text};
   }
-  .section__block{
-    background:${({ theme }) => theme.block};
-  }
   .port_intro_name {
     color:${({ theme }) => theme.text};
   }
