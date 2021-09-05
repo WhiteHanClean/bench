@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./partners.css";
 import Grid from "@material-ui/core/Grid";
 import Airbnb from "../../assets/Airbnb.svg";
@@ -10,8 +10,24 @@ import Walmart from "../../assets/Walmart.svg";
 import Oyo from "../../assets/Oyo.svg";
 import Ola from "../../assets/OLA.svg";
 import Amazon from "../../assets/Amazon.svg";
+import SwiperCore, { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import axios from "axios";
+
+SwiperCore.use([Pagination]);
 
 const Partners = () => {
+  const getPartners = () => {
+    const response = axios.get(
+      `http://35.198.122.64/api/v1/main/studio-partner/`
+    );
+    console.log(response);
+  };
+
+  useEffect(() => {
+    getPartners();
+  }, []);
+
   return (
     <div className="container">
       <div className="section">
@@ -22,6 +38,37 @@ const Partners = () => {
           <div className="section__item_2">
             <p>We have been working with some Fortune 500 clients</p>
           </div>
+        </div>
+        <div className="partners_swiper">
+          <Swiper grabCursor={true} className="mySwiper">
+            <SwiperSlide>
+              <img className="section__block" src={Airbnb} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Google} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Book} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Microsoft} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Fedex} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Walmart} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Google} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Ola} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="section__block" src={Amazon} />
+            </SwiperSlide>
+          </Swiper>
         </div>
         <div className="section__blocks">
           <Grid
