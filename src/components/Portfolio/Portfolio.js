@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./portfolio.css";
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 import port from "../../assets/port.png";
+import axios from "axios";
 
 // import "swiper/css";
 // import "swiper/css/effect-coverflow"
@@ -11,6 +12,17 @@ import port from "../../assets/port.png";
 SwiperCore.use([EffectCoverflow, Pagination]);
 
 export default function Portfolio() {
+  const getPortfolio = () => {
+    const response = axios.get(
+      `http://35.198.122.64/api/v1/main/studio-portfolio/`
+    );
+    console.log(response);
+  };
+
+  useEffect(() => {
+    getPortfolio();
+  }, []);
+
   return (
     <div className="slider">
       <Swiper
