@@ -27,6 +27,8 @@ const Service = () => {
                 <ServiceBlock />
             </div>
 
+            <div className="linia"></div>
+
             <div className="slave">
 
                 <div ref={sliderRef} className="keen-slider">
@@ -51,6 +53,8 @@ const Service = () => {
                 </div>
 
             </div>
+
+            <div className="linia"></div>
 
 
         </div>

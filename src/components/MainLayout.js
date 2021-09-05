@@ -6,11 +6,11 @@ import Partners from "./Partners/Partners";
 import Portfolio from "./Portfolio/Portfolio";
 import Service from "./service/Service";
 
-function MainLayout() {
+function MainLayout({theme, toogleTheme}) {
 
   return (
     <>
-      <Navbar />
+      <Navbar theme ={theme} toogleTheme={toogleTheme}/>
       <Intro />
       <Service />
       <Portfolio/>

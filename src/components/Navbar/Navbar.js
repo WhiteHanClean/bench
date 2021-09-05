@@ -63,7 +63,8 @@ const IOSSwitch = withStyles((theme) => ({
   );
 });
 
-export default function Navbar() {
+export default function Navbar( {theme, toogleTheme} ) {
+  // console.log(theme)
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
@@ -180,9 +181,9 @@ export default function Navbar() {
                 />
               </div>
             </FormGroup>
-            <div className="moon__cont">
+            <div className="moon__cont"  onClick={toogleTheme}>
               <IconButton>
-                <Brightness3Icon className="moon" />
+                <Brightness3Icon className={theme ==='ligth'?"moon":"ok"} />
               </IconButton>
             </div>
           </div>

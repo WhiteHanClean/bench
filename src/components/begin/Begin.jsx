@@ -7,7 +7,7 @@ const Begin = () => {
     return (
         <div className="main">
 
-            <img src={begin} class="white_one" alt="" />
+            <img src={begin} className="white_one" alt="" />
 
             <div className="red_wrapper">
 

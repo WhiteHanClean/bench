@@ -22,7 +22,8 @@ code {
 }
 
 body {
-  background-color: #181818;
+  /* background-color: #181818; */
+  /* color:black; */
   max-width: 1440px;
   margin: 0 auto;
 }

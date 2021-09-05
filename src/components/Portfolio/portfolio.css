@@ -27,7 +27,7 @@
 }
 
 .slider {
-    height: 1010px;
+    margin-bottom: 90px;
 }
 
 .port_name {
@@ -62,10 +62,31 @@
     font-size: 14px;
     line-height: 20px;
     text-align: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
     padding-top: 7px;
     padding-left: 26px;
     padding-right: 26px;
     padding-bottom: 6px;
-    margin: 0 auto;
+}
+
+.port_button_center {
+    display: flex;
+    justify-content: center;
+}
+
+.port_intro_name {
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 59px;
+    line-height: 81px;
+
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 83px;
+    margin-top: 104px;
+}
+.port-logo{
+    margin: 45%;
+    position: absolute;
 }
